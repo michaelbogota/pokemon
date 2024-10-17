@@ -8,8 +8,8 @@ const router = express.Router();
 
 router.get("/pokemons", async (req, res) => {
     try {
-        const pokemons = await listarPokemones()
-        res.render("pages/pokemons", { estudiantes: pokemons });
+        const pokemones = await listarPokemones()
+        res.render("pages/pokemons", { pokemones });
     } catch (error) {
         const { status, message } = error;
         res.status(status || 500).json({ error: message });
