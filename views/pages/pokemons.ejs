@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('../includes/head') %>
+  </head>
+  <body>
+    <%- include('../includes/header') %>
+
+    <div class="container" style="margin-top: 80px !important">
+      <div class="row justify-content-md-center mb-5">
+        <div class="col-md-12 mt-5">
+          <h2 class="text-center title">
+            A good list of Pokemons
+            <hr />
+          </h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center mb-5">
+        <div class="col-md-12 py-3 custom_table">
+          <h3 class="text-center">
+            Lista de Estudiantes
+            <hr />
+          </h3>
+
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Alumno</th>
+                  <th>Email Alumno</th>
+                  <th>Curso del Alumno</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% let contador = 1; %>
+                <!---->
+                <% estudiantes.forEach(function(estudiante) { %>
+                <tr>
+                  <th scope="row"><%= contador %></th>
+                  <td><%= estudiante.name.english %></td>
+                  <td><%= estudiante.species %></td>
+                  <td><%= estudiante.description %></td>
+                  <td><img style="width: 200px; height: auto;" src="<%= estudiante.image.thumbnail %>" alt="<%= estudiante.name.english %>"></td>
+
+                </tr>
+                <% contador++; %>
+                <!---->
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../includes/scripts') %>
+  </body>
+</html>
